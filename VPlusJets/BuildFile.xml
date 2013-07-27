@@ -5,12 +5,14 @@
 <use name="DataFormats/MuonReco"/>
 <use name="DataFormats/METReco"/>
 <use name="DataFormats/JetReco"/>
+<use name="DataFormats/HepMCCandidate"/>
 <use name="JetMETCorrections/Objects"/>
 <use name="JetMETCorrections/Algorithms"/>
 <use name="RecoJets/JetProducers"/>
 <use name="HLTrigger/HLTcore"/>
 <use name="RecoEcal/EgammaCoreTools"/>
 <use name="EGamma/EGammaAnalysisTools"/>
+<use name="JetSubstructure/SubstructureTools"/>
 <flags   EDM_PLUGIN="1"/>
 <export>
    <lib name="1"/>
