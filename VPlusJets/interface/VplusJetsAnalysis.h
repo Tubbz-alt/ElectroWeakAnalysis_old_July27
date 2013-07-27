@@ -37,17 +37,27 @@
 #include "TTree.h"
 
 #include "ElectroWeakAnalysis/VPlusJets/interface/JetTreeFiller.h"
-#include "ElectroWeakAnalysis/VPlusJets/interface/GroomedJetFiller.h"
-#include "ElectroWeakAnalysis/VPlusJets/interface/PhotonTreeFiller.h"
+//#include "ElectroWeakAnalysis/VPlusJets/interface/GroomedJetFiller.h"
+//#include "ElectroWeakAnalysis/VPlusJets/interface/PhotonTreeFiller.h"
 #include "ElectroWeakAnalysis/VPlusJets/interface/VtoElectronTreeFiller.h"
 #include "ElectroWeakAnalysis/VPlusJets/interface/VtoMuonTreeFiller.h"
 #include "ElectroWeakAnalysis/VPlusJets/interface/MCTreeFiller.h"
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "CommonTools/UtilAlgos/interface/TFileService.h"
 
+#include <fastjet/ClusterSequence.hh>
+#include <fastjet/GhostedAreaSpec.hh>
+#include <fastjet/ClusterSequenceArea.hh>
+#include "fastjet/tools/Filter.hh"
+#include "fastjet/tools/Pruner.hh"
+#include "fastjet/tools/MassDropTagger.hh"
+#include "fastjet/GhostedAreaSpec.hh"
+
+
 //
 // class decleration
 //
+
 namespace ewk
 {
   class VplusJetsAnalysis : public edm::EDAnalyzer {
@@ -84,7 +94,7 @@ namespace ewk
     std::auto_ptr<ewk::JetTreeFiller> CorrectedPFJetFiller;
     std::auto_ptr<ewk::JetTreeFiller> CorrectedPFJetFillerVBFTag; //For VBF Tag Jets
 
-    std::auto_ptr<ewk::GroomedJetFiller> AK5groomedJetFiller;
+    /*std::auto_ptr<ewk::GroomedJetFiller> AK5groomedJetFiller;
     std::auto_ptr<ewk::GroomedJetFiller> AK7groomedJetFiller;
     std::auto_ptr<ewk::GroomedJetFiller> AK8groomedJetFiller;
     std::auto_ptr<ewk::GroomedJetFiller> CA8groomedJetFiller;
@@ -94,11 +104,11 @@ namespace ewk
     std::auto_ptr<ewk::GroomedJetFiller> genAK7groomedJetFiller;
     std::auto_ptr<ewk::GroomedJetFiller> genAK8groomedJetFiller;
     std::auto_ptr<ewk::GroomedJetFiller> genCA8groomedJetFiller;
-    std::auto_ptr<ewk::GroomedJetFiller> genCA12groomedJetFiller;
+    std::auto_ptr<ewk::GroomedJetFiller> genCA12groomedJetFiller;*/
 
 
     std::auto_ptr<ewk::JetTreeFiller> GenJetFiller;
-    std::auto_ptr<ewk::PhotonTreeFiller> PhotonFiller;
+  //  std::auto_ptr<ewk::PhotonTreeFiller> PhotonFiller;
     std::auto_ptr<ewk::VtoElectronTreeFiller> recoBosonFillerE;
     std::auto_ptr<ewk::VtoMuonTreeFiller> recoBosonFillerMu;
     std::auto_ptr<ewk::MCTreeFiller> genBosonFiller;
